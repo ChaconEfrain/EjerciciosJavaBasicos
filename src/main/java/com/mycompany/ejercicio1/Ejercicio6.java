@@ -30,25 +30,26 @@ public class Ejercicio6 {
         int salario = 0;
         Scanner lector = new Scanner(System.in);
         System.out.println("Ingrese el número de empleado: ");
-        char empleado = lector.next().charAt(0);
+        int empleado = Integer.parseInt (lector.next());
+        if (empleado > 4){
+            System.out.println("El número es inválido.");
+            System.exit(0);
+        }
         System.out.println("Ingrese la cantidad de días trabajados: ");
         int dias = Integer.parseInt (lector.next());
         switch (empleado){
-            case '1':
+            case 1:
                 salario = dias * 56;
                 break;
-            case '2':
+            case 2:
                 salario = dias * 64;
                 break;
-            case '3':
+            case 3:
                 salario = dias * 80;
                 break;
-            case '4':
+            case 4:
                 salario = dias * 48;
-                break;
-            default:
-                System.out.println("El número de empleado es incorrecto");
-                //Preguntar a Joel por qué no se ejecuta el default?
+                break;             
         }
         System.out.println("El salario correspondiente es: $" + salario);    
 }
