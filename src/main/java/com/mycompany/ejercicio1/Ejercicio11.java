@@ -21,7 +21,23 @@ public class Ejercicio11 {
         //Debes pedir las variables a, b y c por teclado y comprobar antes que 
         //el discriminante (operación en la raíz cuadrada). Para la raíz cuadrada 
         //usa el método sqlrt de Math. Te recomiendo que uses mensajes de traza.
-        double discriminante = 0;
+        
+        ejecutar();
+    }
+    public static double calcularDiscriminante(int a, int b, int c){
+        double discriminante = Math.pow(b, 2) - (4*a*c);
+        return discriminante;
+    }
+    public static double calcular_x1(int a, int b, double discriminante){
+        double x1 = ((b*(-1)) + Math.sqrt(discriminante)) / 2*a;
+        return x1;
+    }
+    public static double calcular_x2(int a, int b, double discriminante){
+        double x2 = ((b*(-1)) - Math.sqrt(discriminante)) / 2*a;
+        return x2;
+    }
+    public static void ejecutar(){
+    double discriminante = 0;
         double x1 = 0;
         double x2 = 0;
         Scanner lector = new Scanner(System.in);
@@ -31,14 +47,14 @@ public class Ejercicio11 {
         int b = Integer.parseInt(lector.next());
         System.out.println("Introduzca el valor de la variable 'c':");
         int c = Integer.parseInt(lector.next());
-        discriminante = Math.pow(b, 2) - (4*a*c);
+        discriminante = calcularDiscriminante(a, b, c);
         if (discriminante > 0){
-            x1 = ((b*(-1)) + Math.sqrt(discriminante)) / 2*a;
-            x1 = ((b*(-1)) - Math.sqrt(discriminante)) / 2*a;
+            x1 = calcular_x1(a, b, discriminante);
+            x2 = calcular_x2(a, b, discriminante);
             System.out.println("El valor de x1 es " +x1+ " y el valor de x2 es " +x2);
         }else{
             System.out.println("El discriminante es menor que cero.");
         }
-    }
     
+}
 }

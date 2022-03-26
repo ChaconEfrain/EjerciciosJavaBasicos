@@ -17,11 +17,32 @@ public class Ejercicio12 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        ejecutar();
+        
+    }
+    public static double calcularSuma(double num1, double num2){
+        double suma = num1 + num2;
+        return suma;
+    }
+    public static double calcularResta(double num1, double num2){
+        double resta = num1 - num2;
+        return resta;
+    }
+    public static double calcularMultiplicacion(double num1, double num2){
+        double multiplicacion = num1 * num2;
+        return multiplicacion;
+    }
+    public static double calcularDivision(double num1, double num2){
+        double division = num1 / num2;
+        return division;
+    }
+    public static void ejecutar(){
         //pregutarle al usario si quiere continuar con el proceso con un bool data type
         Scanner lector = new Scanner(System.in);
         boolean continuar = true;
         while (continuar == true){
-            double total = 0;
+               double total = 0;
         System.out.println("Ingrese el primer número: ");
         double numero1 = Double.parseDouble (lector.next());
         System.out.println("Ingrese el segundo número: ");
@@ -31,16 +52,16 @@ public class Ejercicio12 {
         char operacion = lector.next().charAt(0);
         switch (operacion){
             case '+':
-                total = numero1 + numero2;
+                total = calcularSuma(numero1, numero2);
                 break;
             case '-':
-                total = numero1 - numero2;
+                total = calcularResta(numero1, numero2);
                 break;
             case '*':
-                total = numero1 * numero2;
+                total = calcularMultiplicacion(numero1, numero2);
                 break;
             case '/':
-                total = numero1 / numero2;
+                total = calcularDivision(numero1, numero2);
                 break;
             default:
                 System.out.println("El operador no es válido");
@@ -49,8 +70,8 @@ public class Ejercicio12 {
         System.out.println("Desea continuar? escriba true o false: ");
             continuar = lector.nextBoolean();
     }
-            
-        }
+    }
+        
     }
     
 

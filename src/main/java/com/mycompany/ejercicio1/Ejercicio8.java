@@ -19,7 +19,7 @@ public class Ejercicio8 {
     public static void main(String[] args) {
         // Hacer un programa para ingresar un número entre 1 y 12 y
         //reportar el mes que le cotresponde
-        String mes = null; //preguntar a Joel por "null".
+        String mes = "";
         Scanner lector = new Scanner(System.in);
         System.out.println("Ingrese un número entre 1 y 12:");
         int numero = Integer.parseInt(lector.next());
