@@ -27,11 +27,19 @@ public class Ejercicio6 {
 	//El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen
         //al número identificador del empleado y la cantidad 
 	//de días que trabajó en la semana (6 día)
+            
+        ejecutar();
+}
+    public static int calcularSalario(int diasTrabajados, int salarioDiario){
+        int salario = diasTrabajados * salarioDiario;
+        return salario;
+    }
+    public static void ejecutar(){
         int salario = 0;
         Scanner lector = new Scanner(System.in);
         System.out.println("Ingrese el número de empleado: ");
         int empleado = Integer.parseInt (lector.next());
-        if (empleado > 4){
+        if (empleado > 4 || empleado < 1){
             System.out.println("El número es inválido.");
             System.exit(0);
         }
@@ -39,19 +47,18 @@ public class Ejercicio6 {
         int dias = Integer.parseInt (lector.next());
         switch (empleado){
             case 1:
-                salario = dias * 56;
+                salario = calcularSalario(dias, 56);
                 break;
             case 2:
-                salario = dias * 64;
+                salario = calcularSalario(dias, 64);
                 break;
             case 3:
-                salario = dias * 80;
+                salario = calcularSalario(dias, 80);
                 break;
             case 4:
-                salario = dias * 48;
+                salario = calcularSalario(dias, 48);
                 break;             
         }
-        System.out.println("El salario correspondiente es: $" + salario);    
-}
-    
+        System.out.println("El salario correspondiente es: $" + salario);
+    }
 }

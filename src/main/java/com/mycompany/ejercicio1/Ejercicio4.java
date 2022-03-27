@@ -22,6 +22,14 @@ public class Ejercicio4 {
         //El IVA sera una constante que sera del 21%
         
         //Estructura de las constantes: Final + Tipo de dato + Nombre de la constante (Mayúscula) = Valor de la constante;
+        
+        ejecutar();
+    }
+    public static double precio_final(double precio_producto, double IVA){
+        double precio_final = precio_producto + (precio_producto * IVA);
+        return precio_final;
+    }
+    public static void ejecutar(){
         final double IVA = 0.21;
         Scanner lector = new Scanner (System.in);
         System.out.println("Ingresa el nombre del producto");
@@ -29,8 +37,7 @@ public class Ejercicio4 {
         System.out.println("Ingrese el valor del producto");
         //double precioProducto = lector.nextDouble();
         double precioProducto = Double.parseDouble (lector.next());
-        double precioFinal = precioProducto + (precioProducto * IVA);
+        double precioFinal = precio_final(precioProducto, IVA);
         System.out.println("El precio de "+producto+" es " + precioFinal);
-    }
 }
-
+}
